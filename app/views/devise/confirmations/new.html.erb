@@ -1,16 +1,30 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> a7c2f9cdecb6375a553dcf2be0d333d0b72ec6dd
 <h2>Resend confirmation instructions</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
   <%= f.full_error :confirmation_token %>
 
+<<<<<<< HEAD
   <div class="form-inputs">
     <%= f.input :email,
+=======
+
+    <div class="form-inputs">
+      <%= f.input :email,
+>>>>>>> a7c2f9cdecb6375a553dcf2be0d333d0b72ec6dd
                 required: true,
                 autofocus: true,
                 value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
                 input_html: { autocomplete: "email" } %>
+<<<<<<< HEAD
   </div>
+=======
+      </div>
+>>>>>>> a7c2f9cdecb6375a553dcf2be0d333d0b72ec6dd
 
   <div class="form-actions">
     <%= f.button :submit, "Resend confirmation instructions" %>
