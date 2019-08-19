@@ -1,0 +1,44 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/dhf3phkaa/image/upload/v1566234788/Phone4_thpine.jpg');">
+    <div class="banner-content">
+      <h1>All available phones</h1>
+      <p>Find the phone you need</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% @announces.each do |announce| %>
+        <div class="col-12 col-md-6 col-lg-3">
+          <% if announce.photo? %>
+            <% background_url = cl_image_path announce.photo, width: 400, height: 500, crop: :fill %>
+          <% else %>
+            <% background_url = 'https://icdn6.digitaltrends.com/image/smartphones-1175-1500x993.jpg' %>
+          <% end %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+            <div class="card-description">
+              <h2><%= announce.model %></h2>
+              <p><%= announce.brand %></p>
+              <p><%= announce.price_per_day %>€</p>
+            </div>
+            <%= link_to "", announce_path(announce), class: 'card-link' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+<!-- <div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div> -->
+
+<!-- <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> -->
