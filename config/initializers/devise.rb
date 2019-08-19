@@ -8,11 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-<<<<<<< HEAD
-  # config.secret_key = '7a5f6b0142a5f41403c4f69f91534021ae183b50889eb51c77e7863c2c016d7bc257fd132db63ee031b1a6f71ae86691b4eaec3063db417dbdae11dc11076d50'
-=======
   # config.secret_key = '2dd8c91c6cece03af538f724093a49e895c97fb9bfce39c3aaa017392bec30da68ffc049d37dd0ef6ae942f13e004bfcf9b4da02e80c2a985815795b6f0e9e7e'
->>>>>>> a7c2f9cdecb6375a553dcf2be0d333d0b72ec6dd
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -22,11 +18,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-<<<<<<< HEAD
-  config.mailer_sender = 'please-change-me-at-config-initializers-contact@airbnp.com'
-=======
   config.mailer_sender = 'contact@airbnp.com'
->>>>>>> a7c2f9cdecb6375a553dcf2be0d333d0b72ec6dd
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
