@@ -10,7 +10,7 @@
           <%= f.input :photo_cache, as: :hidden %>
           <%= f.input :state, collection: Announce::STATE %>
           <%= f.input :description %>
-          <%= f.input :price_per_day, collection: Announce::PRICES %>
+          <%= f.input :price_per_day, collection: Announce::PRICES, label: "Price in €"%>
           <%= f.input :purchase_year %>
           <%= f.input :date_start %>
           <%= f.input :date_end %>
