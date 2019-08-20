@@ -1,33 +1,24 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/dhf3phkaa/image/upload/v1566234788/Phones_ag3fq0.jpg');">
 <div class="container">
-    <h1><strong> All available phones <strong></h1>
-    <p>Find the phone you need</p>
-    <a class="btn btn-primary" <%= link_to "Sign-in",  new_user_session_path %> </a>
+    <h1><strong> Available phones <strong></h1>
+    <p>Find your next phone</p>
   </div>
 </div>
 
-
-
+<div class="container">
+    <div class="row">
     <% @announces.each do |announce| %>
-      <div class="container">
-        <div class="row">
           <div class="card-product" class="col-6">
             <%= cl_image_tag announce.photo %>
             <div class="card-product-infos" class="col-6">
               <h2><%= announce.model %></h2>
               <h2><%= announce.brand %></h2>
               <p><%= announce.description %></p>
+              <br>
+              <%= link_to "Details", announce_path(announce) %>
             </div>
           </div>
-        </div>
-      </div>
     <% end %>
+     </div>
+</div>
 
-<!-- <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> -->
