@@ -7,7 +7,6 @@ class Announce < ApplicationRecord
   validates :brand, presence: true
   validates :state, presence: true, inclusion: { in: STATE }
   validates :description, presence: true
-  validates :price_per_day, inclusion: { in: PRICES }
   validates :date_start, presence: true
   validates :date_end, presence: true
 end
