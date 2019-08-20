@@ -4,26 +4,24 @@ class AnnouncesController < ApplicationController
     @announces = Announce.all
   end
 
-  # def show
-  #   @announce = .find(params[:id])
-  #   @dose = Dose.new
-  #   @review = Review.new
-  # end
 
-  # def new
-  #   @cocktail = Cocktail.new
-  # end
+  def new
+    @announce = Announce.new
+  end
 
-  # def create
-  #   @cocktail = Cocktail.new(cocktail_params)
-  #   if @cocktail.save
-  #     redirect_to cocktail_path(@cocktail)
-  #   else
-  #     render 'new'
-  #   end
-  # end
+  def create
+    @announce = Announce.new(announce_params)
+    @announce.user = current_user
+    if @announce.save
+      redirect_to announces_path
+    else
+      render 'new'
+    end
+  end
 
-  # private
+  private
 
-
+  def announce_params
+    params.require(:announce).permit(:model, :brand, :state, :photo, :description, :purchase_year, :date_start, :date_end)
+  end
 end
