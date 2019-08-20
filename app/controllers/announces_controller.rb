@@ -1,5 +1,4 @@
 class AnnouncesController < ApplicationController
-
   def index
     @announces = Announce.all
   end
@@ -16,6 +15,22 @@ class AnnouncesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show
+    @announce = Announce.find(params[:id])
+  end
+
+  def update
+    @announce = Announce.find(params[:id])
+    @announce.update(params[:announce])
+    redirect_to announces_path
+  end
+
+  def destroy
+    @announce = Announce.find(params[:id])
+    @announce.destroy
+    redirect_to announces_path
   end
 
   private
