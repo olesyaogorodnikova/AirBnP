@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
+    @booking = Booking.find(params[:id].to_i)
   end
 
   def create
@@ -20,6 +20,11 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   def booking_params
