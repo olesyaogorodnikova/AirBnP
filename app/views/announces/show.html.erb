@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
      <!-- Displaying modele as a title</!-->
-      <h2 class="text-underline"> <%= @announce.modele %> </h2>
+      <h2 class="text-underline"> <%= @announce.model %> </h2>
   <!-- For picture </!-->
   <% if @announce.photo? %>
     <%= @announce.photo.path, width: 250, height: 300, crop: :fill %>
@@ -11,7 +11,7 @@
         <p><%= @announce.state %></p>
         <p><%= @announce.description %></p>
         <p><%= @announce.price_per_day %></p>
-        <p><%= @announce.bought_year %></p>
+        <p><%= @announce.purchase_year %></p>
         <p><%= @announce.date %></p>
         <% end %>
       </div>
