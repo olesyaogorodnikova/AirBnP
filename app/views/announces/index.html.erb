@@ -2,24 +2,24 @@
 <div class="container">
     <h1><strong> All available phones <strong></h1>
     <p>Find the phone you need</p>
-    <a class="btn btn-primary" <%= link_to "Sign-in",  new_user_session_path %> </a>
   </div>
 </div>
 
-
-
     <% @announces.each do |announce| %>
-      <div class="container">
+     <div class="container">
         <div class="row">
-          <div class="card-product" class="col-6">
-            <%= cl_image_path @announce.photo%>
-            <div class="card-product-infos" class="col-6">
+          <div class="card-product" class="col-2">
+            <%= cl_image_tag announce.photo %>
+            <div class="card-product-infos" class="col-2">
               <h2><%= announce.model %></h2>
               <h2><%= announce.brand %></h2>
               <p><%= announce.description %></p>
+              <br>
+              <%= link_to "Details", announce_path(announce) %>
             </div>
           </div>
         </div>
+      </div>
       </div>
     <% end %>
 
