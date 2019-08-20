@@ -1,7 +1,10 @@
+ <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path'https://res.cloudinary.com/dhf3phkaa/image/upload/v1566234788/Phones_ag3fq0.jpg' %>'); height:1000px; text-align:left">
+
+
   <div class="container">
+    <h1 class= "text-center">Create a new announce</h1>
     <div class="row justify-content-center">
       <div class="col-6">
-        <h1>Create a new announce</h1>
 
         <%= simple_form_for @announce do |f| %>
           <%= f.input :model %>
@@ -14,7 +17,7 @@
           <%= f.input :purchase_year %>
           <%= f.input :date_start %>
           <%= f.input :date_end %>
-          <%= f.button :submit, class: 'btn btn-primary col-12' %>
+          <%= f.button :submit, class: 'btn btn-primary col-12 btn-font' %>
         <% end %>
       </div>
     </div>
