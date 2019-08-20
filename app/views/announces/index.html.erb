@@ -10,7 +10,7 @@
     <% @announces.each do |announce| %>
           <div class="card-product" class="col-6">
             <%= cl_image_tag announce.photo %>
-            <div class="card-product-infos">
+            <div class="card-product-infos" class="col-6">
               <h2><%= announce.model %></h2>
               <h2><%= announce.brand %></h2>
               <p><%= announce.description %></p>

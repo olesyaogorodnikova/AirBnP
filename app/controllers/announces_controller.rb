@@ -7,6 +7,10 @@ class AnnouncesController < ApplicationController
     @announce = Announce.new
   end
 
+  def show
+    @announce = Announce.find(params[:id].to_i)
+  end
+
   def create
     @announce = Announce.new(announce_params)
     @announce.user = current_user
@@ -15,10 +19,6 @@ class AnnouncesController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def show
-    @announce = Announce.find(params[:id])
   end
 
   def update
