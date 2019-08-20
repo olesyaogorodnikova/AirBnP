@@ -5,15 +5,15 @@
       <h2 class="text-underline"> <%= @announce.model %> </h2>
   <!-- For picture </!-->
   <% if @announce.photo? %>
-    <%= @announce.photo.path, width: 250, height: 300, crop: :fill %>
+    <%= cl_image_tag @announce.photo, width: 250, height: 300, crop: :fill %>
   <% end %>
         <p><%= @announce.brand %></p>
         <p><%= @announce.state %></p>
         <p><%= @announce.description %></p>
         <p><%= @announce.price_per_day %></p>
         <p><%= @announce.purchase_year %></p>
-        <p><%= @announce.date %></p>
-        <% end %>
+        <p><%= @announce.date_start %></p>
+        <p><%= @announce.date_end %></p>
       </div>
     </div>
   </div>
