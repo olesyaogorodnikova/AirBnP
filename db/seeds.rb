@@ -6,37 +6,51 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
+User.destroy_all
+Announce.destroy_all
 
-puts 'Creating 5 fake users...'
-5.times do
-  user = User.new(
-    first_name: Faker::Hipster,
-    last_name: Faker::Book.author,
-    localisation: Faker::Nation,
-    email: "#{Faker::Address.street_address}@#{Faker::Address.city}.com",
-    password: Faker::Beer
+users = [
+  {
+    first_name: "Mike",
+    last_name: "Smith",
+    localisation: "France",
+    email: "smith@gmail.com",
+    password: "123456"
+    },
+  {
+    first_name: "Luke",
+    last_name: "Kohl",
+    localisation: "Germany",
+    email: "kohl@gmail.com",
+    password: "123456"
+    }]
 
-  )
-  user.save!
-end
+users.each { |user| User.create(user) }
 
+announces = [
+  {
+    model: "X10",
+    brand: "IPhone",
+    state: "very good",
+    photo: "https://images.samsung.com/is/image/samsung/ph-galaxy-a9-a920-sm-a920fzbdxtc-frontvitalityblue-123095342?$PD_GALLERY_L_JPG$",
+    description: "The smartphone in a very good state",
+    price_per_day: "10€",
+    purchase_year: "2018",
+    date_start: "18/08/2019",
+    date_end: "19/08/2019",
+    user_id: User.first.id
+    },
+  {
+    model: "s12",
+    brand: "Sumsung",
+    state: "very good",
+    photo: "https://images.samsung.com/is/image/samsung/ph-galaxy-a9-a920-sm-a920fzbdxtc-frontvitalityblue-123095342?$PD_GALLERY_L_JPG$",
+    description: "The smartphone in a very good state",
+    price_per_day: "15€",
+    purchase_year: "2018",
+    date_start: "19/08/2019",
+    date_end: "20/08/2019",
+    user_id: User.last.id
+    }]
 
-puts 'Creating 10 fake announces...'
-10.times do
-  announce = Announce.new(
-    model:    Faker::Book,
-    brand: Faker::Company.name,
-    state:  "bon état",
-    user_id: rand(0..5)
-    # photo:
-    # description:
-    # price_per_day:
-    # purchase_year:
-    # date_start:
-    # date_end:
-
-  )
-  announce.save!
-end
-puts 'Finished!'
+announces.each { |announce| Announce.create(announce) }
