@@ -7,13 +7,15 @@
   <% if @announce.photo? %>
     <%= cl_image_tag @announce.photo, width: 250, height: 300, crop: :fill %>
   <% end %>
-        <p><%= @announce.brand %></p>
+        <h2><%= @announce.brand %></h2>
         <p><%= @announce.state %></p>
         <p><%= @announce.description %></p>
         <p><%= @announce.price_per_day %></p>
         <p><%= @announce.purchase_year %></p>
         <p><%= @announce.date_start %></p>
         <p><%= @announce.date_end %></p>
+        <div><%= link_to "Back to list", announces_path, class: "btn btn-info" %></div>
+        <div><%= link_to "Book it now !", new_booking_path, class: "btn btn-success" %></div>
       </div>
     </div>
   </div>

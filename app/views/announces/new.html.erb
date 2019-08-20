@@ -1,6 +1,6 @@
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-6">
         <h1>Create a new announce</h1>
 
         <%= simple_form_for @announce do |f| %>
@@ -8,13 +8,13 @@
           <%= f.input :brand %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
-          <%= f.input :state %>
+          <%= f.input :state, collection: Announce::STATE %>
           <%= f.input :description %>
-          <%= f.input :price_per_day %>
+          <%= f.input :price_per_day, collection: Announce::PRICES, label: "Price in €"%>
           <%= f.input :purchase_year %>
           <%= f.input :date_start %>
           <%= f.input :date_end %>
-          <%= f.button :submit, class: 'btn btn-primary' %>
+          <%= f.button :submit, class: 'btn btn-primary col-12' %>
         <% end %>
       </div>
     </div>
