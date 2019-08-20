@@ -15,7 +15,9 @@
         <p><%= @announce.date_start %></p>
         <p><%= @announce.date_end %></p>
         <div><%= link_to "Back to list", announces_path, class: "btn btn-info" %></div>
-        <div><%= link_to "Book it now !", new_booking_path, class: "btn btn-success" %></div>
+        <br>
+        <div><%= link_to "Book it now !", bookings_path(announce_id: @announce.id, user_id: current_user.id), method: "post", data: {confirm: "Are you sure?"}, class: "btn btn-success" %>
+        </div>
       </div>
     </div>
   </div>

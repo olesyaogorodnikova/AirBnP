@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+      <h1>Coucou les amis</h1>
+      <br>
+      <% @bookings.each do |booking| %>
+            <div class="card-product col-6">
+              <%= cl_image_tag booking.announce.photo %>
+              <div class="card-product-infos">
+                <h2><%= booking.announce.model %></h2>
+                <h2><%= booking.announce.brand %></h2>
+                <p><%= booking.announce.description %></p>
+              </div>
+            </div>
+      <% end %>
+      </div>
+  </div>
+
+
