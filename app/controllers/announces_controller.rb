@@ -4,6 +4,7 @@ class AnnouncesController < ApplicationController
     @announces = Announce.all
   end
 
+
   def new
     @announce = Announce.new
   end
