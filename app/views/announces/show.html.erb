@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Create a new announce</h1>
+
+        <%= simple_form_for @announce do |f| %>
+          <%= f.input :brand %>
+          <%= f.input :model %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
