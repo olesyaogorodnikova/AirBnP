@@ -8,7 +8,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '3a321e7a6ca01d7b5556e87d67bd7958cb86d01bc475bc31744a4654708fe4b0167acf58b8f03c1802399f55b972ac97304f64e364f427d47aa5ab6d27e22440'
+
+  # config.secret_key = 'dc9796afd49bb939ac0bc8f351ffeb9f2faa62c1c56da56c6875bdbb08b61dbb7417f10c85cbf61ff5ebb34558a87e772d09f12d3401cb7b04b864519970f980'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -18,8 +19,8 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-contact@AirBnP.com'
 
+  config.mailer_sender = 'contact@airbnp.com'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -114,7 +115,9 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '3790c4d275e6f36aaf0606219ea938e4413a28be6c8ac2325e0bd567364adc07d0a84c78b56c3c8a316f13a1d296454b102ac6f31218e9defaf7b07484c527d3'
+
+
+  # config.pepper = 'ce020b3b07c2b4e0f6e6cb2bf247454d17253d54a800bc08a042a5ef7608dc448977c7668eda35151145f7ca118b3db7ea5474b5935975c57360292f6cb003ae'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
