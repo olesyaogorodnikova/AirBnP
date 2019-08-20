@@ -18,7 +18,7 @@ class AnnouncesController < ApplicationController
   end
 
   def show
-    @announce = Announce.find(params[:id])
+    @announce = Announce.find(params[:id].to_i)
   end
 
   def update
