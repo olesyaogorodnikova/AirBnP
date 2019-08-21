@@ -30,18 +30,20 @@
     <% @bookings.each do |booking| %>
           <div class="card-product col-6">
             <%= cl_image_tag booking.announce.photo %>
-            <div class="card-product-infos">
-              <h2><%= booking.announce.model %></h2>
-              <h2><%= booking.announce.brand %></h2>
-              <p><%= booking.announce.description %></p>
-              <br>
-              <div class="container" id="container-trash">
-                <div class="row">
-              <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete this booked phone?" } do %>
-              <i class="fa fa-trash destroy_booking mt-5"></i>
-              <% end %>
+            <div class="card-product-infos card-right-part">
+              <div class="card-description">
+                <h2><%= booking.announce.model %></h2>
+                <h2><%= booking.announce.brand %></h2>
+                <p><%= booking.announce.description %></p>
               </div>
-            </div>
+              <div class="card-bottom-link">
+                <%= link_to "Details", announce_path(booking.announce_id) %>
+                <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete this booked phone?" } do %>
+                  <i class="fa fa-trash destroy_booking"></i>
+                <% end %>
+              </div>
+
+
             </div>
           </div>
     <% end %>
