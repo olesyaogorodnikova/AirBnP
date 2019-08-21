@@ -71,6 +71,17 @@
   grid-gap: 20px;
 }
 
+.btn-primary {
+  margin: 3px;
+}
+
+#container-bookings {
+  width: 40%;
+  align-items: center;
+  space-between: center;
+  padding: 10px;
+}
+
 @import "banner";
 @import "cards";
 @import "footer";
