@@ -12,11 +12,16 @@
   opacity: 1;
 }
 
+.btn-font {
+  font-size: 24px;
+}
+
 .btn-flat {
   color: white;
+  font-size:24px;
   padding: 8px 24px;
-  border-radius: 4px;
-  background: #1EDD88;
+  border-radius: 6px;
+
   transition: background 0.3s ease;
 }
 

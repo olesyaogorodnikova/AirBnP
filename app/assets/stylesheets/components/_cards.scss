@@ -19,6 +19,30 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-phones {
+  background: white;
+  color: black;
+  border-radius: 10px;
+  width:800px;
+  p {
+    color: black;
+  }
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
