@@ -20,7 +20,7 @@
           <h4>Date end: <%= @announce.date_end %></h4>
           <div><%= link_to "Back to list", announces_path, class: "btn btn-info btn-font mb-3 mt-3" %></div>
           <div><%= simple_form_for [@announce, @booking ] do |f| %>
-          <% f.submit "Book it now !", class: "btn btn-success btn-font  font-weight-bold" %>
+          <% f.submit "Book it now !", data: {confirm: "Are you sure to book this ?" }, class: "btn btn-success btn-font  font-weight-bold" %>
           <% end %>
           </div>
         </div>
@@ -28,7 +28,3 @@
     </div>
   </div>
 </div>
-
-
-
-# simple form for / f submit / --> ca va create / on redirect to index
