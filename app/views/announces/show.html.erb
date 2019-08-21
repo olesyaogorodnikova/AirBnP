@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path'https://res.cloudinary.com/dhf3phkaa/image/upload/v1566234788/Phones_ag3fq0.jpg' %>'); height:880px">
   <div class="banner-content">
-    <h1 class="offset-0 mb-5 mt-5">Your Choice</h1>
+    <h1 class="offset-0 mb-5 mt-5">Your Choice :</h1>
 
     <div class="card-phones shadow-lg">
       <h2 class="text-underline mb-5 pt-3"> <%= @announce.model %> </h2>
@@ -19,7 +19,10 @@
           <h4>Date start:<%= @announce.date_start %></h4>
           <h4>Date end: <%= @announce.date_end %></h4>
           <div><%= link_to "Back to list", announces_path, class: "btn btn-info btn-font mb-3 mt-3" %></div>
-          <div><%= link_to "Book it now !", new_booking_path, class: "btn btn-success btn-font  font-weight-bold" %></div>
+          <div><%= simple_form_for [@announce, @booking ] do |f| %>
+          <% f.submit "Book it now !", class: "btn btn-success btn-font  font-weight-bold" %>
+          <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -28,3 +31,4 @@
 
 
 
+# simple form for / f submit / --> ca va create / on redirect to index
