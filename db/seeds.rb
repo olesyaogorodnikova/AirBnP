@@ -53,4 +53,10 @@ announces = [
     user_id: User.last.id
     }]
 
-announces.each { |announce| Announce.create(announce) }
+announces.each do |announce|
+  ann = Announce.new(announce)
+  ann.remote_photo_url = announce[:photo]
+  ann.save!
+
+end
+

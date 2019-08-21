@@ -9,6 +9,7 @@ class AnnouncesController < ApplicationController
 
   def show
     @announce = Announce.find(params[:id].to_i)
+    @booking = Booking.new
   end
 
   def create
