@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path'smart_banner_z6hhdo.jpg' %>');">
   <div class="banner-content">
-    <h1 class="offset-0 mb-5" style="margin-top: -10rem">Rent your Smartphone</h1>
-    <p><span id="banner-typed-text" style="font-weight:bold;color:black"></span></p>
+    <h1 class="offset-0 mb-5" style="margin-top: -10rem">AirBnP for Smartphones</h1>
+    <p><span id="banner-typed-text" style="font-weight:bold; margin-left: -30rem; font-size:38px; color: #1BCB7F"></span></p>
     <h2 style="margin-left: -35rem; margin-top: 4rem">Long-term or Short-term Rental!</h2>
      <h2 style="margin-left: -35rem; margin-top: 2rem">Earn money renting your SmartPhone!</h2>
      <h2 style="margin-left: -35rem; margin-top: 2rem">Find your dream Smartphone!</h2>
@@ -12,34 +12,27 @@
 
 
 <div class="container" style="height: 300px">
-    <h1 class = "mb-5 text-center" style="color: black">We offer rentals of smartphones devices for Corporate or Private use. </h1>
+    <h1 class = "mb-5 text-center" style="color: #061E32">We offer rentals of smartphones for Corporate or Private use! </h1>
     <div class="d-flex justify-content-around">
-      <div> <%= link_to "I want to add my phone", new_announce_path, class: "btn btn-primary btn-lg btn-lg btn-flat" %></div>
-       <div> <%= link_to "I want the SmartPhone", announces_path, class: "btn btn-primary btn-lg btn-flat" %></div>
-    </div>
+    <div> <%= link_to "I want to add my Phone", new_announce_path, class: "btn btn-success btn-lg btn-lg btn-flat p-3 font-weight-bold" %></div>
+    <div> <%= link_to "I want a Phone", announces_path, class: "btn btn-primary btn-lg btn-flat p-3 font-weight-bold" %></div>
+</div>
+
 
 </div>
 
-    <div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'sony_x_rcxtf6.jpg' %>');">
-    Sony
-  </div>
+  <div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'sony_x_rcxtf6.jpg' %>')"><%= link_to "Sony", announces_path %></div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'samsung_galaxy_l8kvfd.jpg' %>');">
-    Samsung
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'samsung_galaxy_l8kvfd.jpg' %>')"><%= link_to "Samsung", announces_path %></div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'huawei_cxlcyz.jpg' %>');">
-    Huawei
-  </div>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'iphonex_lcmkpg.jpg' %>');">
-    Iphone
-  </div>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'nokia_ysaqyu.jpg'%>');">
-    Nokia
-  </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'smart_banner_z6hhdo.jpg' %>');">
-    Other
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'huawei_ij4nhu.jpg' %>')"><%= link_to "Huawei", announces_path %></div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'iphonex_lcmkpg.jpg' %>')"><%= link_to "IPhone", announces_path %></div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'nokia_ysaqyu.jpg'%>')"><%= link_to "Nokia", announces_path %></div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'smart_banner_z6hhdo.jpg' %>')"><%= link_to "Other", announces_path %></div>
   </div>
 </div>
 

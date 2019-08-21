@@ -1,21 +1,34 @@
-<div class="container pad20">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-     <!-- Displaying modele as a title</!-->
-      <h2 class="text-underline"> <%= @announce.model %> </h2>
-  <!-- For picture </!-->
-  <% if @announce.photo? %>
-    <%= cl_image_tag @announce.photo, width: 250, height: 300, crop: :fill %>
-  <% end %>
-        <h2><%= @announce.brand %></h2>
-        <p><%= @announce.state %></p>
-        <p><%= @announce.description %></p>
-        <p><%= @announce.price_per_day %></p>
-        <p><%= @announce.purchase_year %></p>
-        <p><%= @announce.date_start %></p>
-        <p><%= @announce.date_end %></p>
-        <div><%= link_to "Back to list", announces_path, class: "btn btn-info" %></div>
-        <div><%= link_to "Book it now !", new_booking_path, class: "btn btn-success" %></div>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path'https://res.cloudinary.com/dhf3phkaa/image/upload/v1566234788/Phones_ag3fq0.jpg' %>'); height:880px">
+  <div class="banner-content">
+    <h1 class="offset-0 mb-5 mt-5">Your Choice :</h1>
+
+    <div class="card-phones shadow-lg">
+      <h2 class="text-underline mb-5 pt-3"> <%= @announce.model %> </h2>
+      <div class="d-flex justify-content-around pb-3">
+        <div>
+        <% if @announce.photo? %>
+          <%= cl_image_tag @announce.photo, width: 400, height: 400, crop: :fill %>
+        <% end %>
+        </div>
+        <div style= text-align:left;>
+          <h4 class="font-weight-bold">Brand: <%= @announce.brand %></h4>
+          <h4 class="font-weight-bold">State: <%= @announce.state %></h4>
+          <h4>Description: <%= @announce.description %></h4>
+          <h4>Price per Day: <%= @announce.price_per_day %></h4>
+          <h4>Year: <%= @announce.purchase_year %></h3>
+          <h4>Date start:<%= @announce.date_start %></h4>
+          <h4>Date end: <%= @announce.date_end %></h4>
+          <div><%= link_to "Back to list", announces_path, class: "btn btn-info btn-font mb-3 mt-3" %></div>
+          <div><%= simple_form_for [@announce, @booking ] do |f| %>
+          <% f.submit "Book it now !", class: "btn btn-success btn-font  font-weight-bold" %>
+          <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+
+
+# simple form for / f submit / --> ca va create / on redirect to index
