@@ -41,6 +41,6 @@ class AnnouncesController < ApplicationController
   private
 
   def announce_params
-    params.require(:announce).permit(:model, :brand, :state, :photo, :description, :purchase_year, :date_start, :date_end)
+    params.require(:announce).permit(:model, :brand, :state, :photo, :description, :purchase_year, :date_start, :date_end, :price_per_day)
   end
 end

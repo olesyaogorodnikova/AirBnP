@@ -77,22 +77,60 @@
 }
 
 #container-bookings {
+  display: flex;
   width: 40%;
   align-items: center;
   space-between: center;
   padding: 10px;
 }
 
-#container-trash {
-    display: flex;
-    position: absolute;
-    right: 16px;
-    top: 170px;
-    width: 40px;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 273px;
+
+.card-bottom-link {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    height: 100%;
   }
+}
+
+.card-right-part {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-description {
+  flex-grow: 1;
+}
+
+.card-product-infos {
+    padding: 12px;
+    padding-bottom: 0;
+}
+// #container-trash {
+//   display: flex;
+//   position: absolute;
+//   right: 16px;
+//   top: 170px;
+//   width: 40px;
+//   flex-direction: column;
+//   align-items: flex-end;
+//   width: 273px;
+//   }
+
+// #container-show {
+//   position: absolute;
+//   right: 16px;
+//   top: 170px;
+//   width: 40px;
+//   flex-direction: column;
+//   align-items: flex-end;
+//   width: 273px;
+// }
+
 
 @import "banner";
 @import "cards";

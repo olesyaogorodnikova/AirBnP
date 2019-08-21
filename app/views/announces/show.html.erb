@@ -14,13 +14,13 @@
           <h4 class="font-weight-bold">Brand: <%= @announce.brand %></h4>
           <h4 class="font-weight-bold">State: <%= @announce.state %></h4>
           <h4>Description: <%= @announce.description %></h4>
-          <h4>Price per Day: <%= @announce.price_per_day %></h4>
+          <h4>Price per Day: <%= @announce.price_per_day %> €</h4>
           <h4>Year: <%= @announce.purchase_year %></h3>
           <h4>Date start:<%= @announce.date_start %></h4>
           <h4>Date end: <%= @announce.date_end %></h4>
           <div><%class= link_to "Back to list", announces_path, class: "btn btn-info btn-font mb-3 mt-3" %></div>
           <div><%= simple_form_for [@announce, @booking ] do |f| %>
-          <% f.submit "Book it now !", data: {confirm: "Are you sure to book this ?" }, class: "btn btn-success btn-font  font-weight-bold" %>
+          <% f.submit "Book it now !", data: { confirm: "Are you sure to book this ?" }, class: "btn btn-success btn-font  font-weight-bold" %>
           <% end %>
           </div>
         </div>
