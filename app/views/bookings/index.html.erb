@@ -1,7 +1,12 @@
-<div class="container">
-    <div class="row">
+<!-- <div class="container" id="container-bookings">
+    <div class="row col-12">
       <h1>All your bookings here</h1>
       <br>
+       </div>
+
+
+<div class="container">
+    <div class="row">
       <% @bookings.each do |booking| %>
             <div class="card-product col-6">
               <%= cl_image_tag booking.announce.photo %>
@@ -11,8 +16,29 @@
                 <p><%= booking.announce.description %></p>
               </div>
             </div>
-      <% end %>
+        <% end %>
       </div>
+  </div> -->
+
+<div class="container" id="container-bookings">
+    <h1><strong> All your booked phones <strong></h1>
   </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    <% @bookings.each do |booking| %>
+          <div class="card-product col-6">
+            <%= cl_image_tag booking.announce.photo %>
+            <div class="card-product-infos">
+              <h2><%= booking.announce.model %></h2>
+              <h2><%= booking.announce.brand %></h2>
+              <p><%= booking.announce.description %></p>
+              <br>
+            </div>
+          </div>
+    <% end %>
+    </div>
+</div>
 
 
