@@ -83,6 +83,17 @@
   padding: 10px;
 }
 
+#container-trash {
+    display: flex;
+    position: absolute;
+    right: 16px;
+    top: 170px;
+    width: 40px;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 273px;
+  }
+
 @import "banner";
 @import "cards";
 @import "footer";
