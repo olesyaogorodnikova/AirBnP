@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path'https://res.cloudinary.com/dhf3phkaa/image/upload/v1566234788/Phones_ag3fq0.jpg' %>'); height:880px">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path'https://res.cloudinary.com/dhf3phkaa/image/upload/v1566234788/Phones_ag3fq0.jpg' %>'); height:800px">
   <div class="banner-content">
     <h1 class="offset-0 mb-5 mt-5">Your Choice :</h1>
 
@@ -6,22 +6,24 @@
       <h2 class="text-underline mb-5 pt-3"> <%= @announce.model %> </h2>
       <div class="d-flex justify-content-around pb-3">
         <div class= "mr-5">
-        <% if @announce.photo? %>
-          <%= cl_image_tag @announce.photo, width: 400, height: 400, crop: :fill %>
-        <% end %>
+          <% if @announce.photo? %>
+            <%= cl_image_tag @announce.photo, width: 400, height: 400, crop: :fill %>
+          <% end %>
         </div>
         <div style= text-align:left;>
           <h4 class="font-weight-normal">Brand: <%= @announce.brand %></h4>
           <h4 class="font-weight-normal">State: <%= @announce.state %></h4>
           <h4>Description: <%= @announce.description %></h4>
-          <h3>Price per Day: <%= @announce.price_per_day %> €</h3>
+          <h4 class="font-weight-bold" style="background-color: #e6f4ef">Price per Day: <%= @announce.price_per_day %> €</h4>
           <h4>Year: <%= @announce.purchase_year %></h3>
           <h4>Date start:<%= @announce.date_start %></h4>
           <h4>Date end: <%= @announce.date_end %></h4>
-          <div><%= link_to "Back to list", announces_path, class: "btn btn-info btn-font mb-3 mt-3" %></div>
-          <div><%= simple_form_for [@announce, @booking ] do |f| %>
-          <% f.submit "Book it now !", data: { confirm: "Are you sure to book this ?" }, class: "btn btn-success btn-font  font-weight-bold" %>
-          <% end %>
+
+          <div>
+            <%= simple_form_for [@announce, @booking ] do |f| %>
+              <% f.submit "Book it now !", data: { confirm: "Are you sure to book this ?" }, class: "btn btn-success btn-font  font-weight-bold" %>
+            <% end %>
+          <div><%= link_to "Back to list", announces_path, class: "btn btn-link"%></div>
           </div>
         </div>
       </div>
