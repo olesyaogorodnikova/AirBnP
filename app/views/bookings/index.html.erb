@@ -20,6 +20,11 @@
       </div>
   </div> -->
 
+
+
+
+
+
 <div class="container" id="container-bookings">
     <h1 class= "mt-5"><strong> All your booked phones <strong></h1>
   </div>
@@ -35,6 +40,7 @@
                 <h2><%= booking.announce.model %></h2>
                 <h2><%= booking.announce.brand %></h2>
                 <p><%= booking.announce.description %></p>
+
               </div>
               <div class="card-bottom-link">
                 <%= link_to "Details", announce_path(booking.announce_id) %>
@@ -42,7 +48,6 @@
                   <i class="fa fa-trash destroy_booking"></i>
                 <% end %>
               </div>
-
 
             </div>
           </div>

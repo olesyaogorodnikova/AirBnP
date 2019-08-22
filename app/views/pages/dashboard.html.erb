@@ -1,0 +1,79 @@
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="bookings-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="bookings" aria-selected="true">Bookings</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="rentings-tab" data-toggle="tab" href="#rentings" role="tab" aria-controls="rentings" aria-selected="false">Rentings</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" id="announces-tab" data-toggle="tab" href="#announces" role="tab" aria-controls="announces" aria-selected="false">Announces</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="bookings" role="tabpanel" aria-labelledby="bookings-tab">
+    <div class="container">
+  <div class="">
+    <h3>My bookings</h3>
+    <% @mybookings.each do |booking| %>
+      <div class="card-product col-6">
+        <%= cl_image_tag booking.announce.photo %>
+        <div class="card-product-infos">
+          <h2><%= booking.announce.model %></h2>
+          <h2><%= booking.announce.brand %></h2>
+          <p><%= booking.announce.description %></p>
+          <br>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+  </div>
+  <div class="tab-pane fade" id="rentings" role="tabpanel" aria-labelledby="rentings-tab">
+       <div class="container">
+  <div class="">
+    <h3>My rentings</h3>
+    <% @myrentings.each do |booking| %>
+      <div class="card-product col-6">
+        <%= cl_image_tag booking.announce.photo %>
+        <div class="card-product-infos">
+          <h2><%= booking.announce.model %></h2>
+          <h2><%= booking.announce.brand %></h2>
+          <p><%= booking.announce.description %></p>
+          <br>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+  </div>
+  <div class="tab-pane fade" id="announces" role="tabpanel" aria-labelledby="announces-tab">
+    <div class="container">
+    <div class="">
+      <h3>My annonces</h3>
+    <% @myannounces.each do |announce| %>
+          <div class="card-product col-6">
+            <%= cl_image_tag announce.photo %>
+            <div class="card-product-infos">
+              <h2><%= announce.model %></h2>
+              <h2><%= announce.brand %></h2>
+              <p><%= announce.description %></p>
+              <br>
+
+            </div>
+          </div>
+    <% end %>
+    </div>
+</div>
+  </div>
+</div>
+
+
+
+
+
+
+
