@@ -24,7 +24,7 @@ class AnnouncesController < ApplicationController
     @announce = Announce.new(announce_params)
     @announce.user = current_user
     if @announce.save
-      redirect_to announces_path
+      redirect_to dashboard_path
     else
       render 'new'
     end
