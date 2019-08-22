@@ -15,9 +15,8 @@
           <h4 class="font-weight-normal">State: <%= @announce.state %></h4>
           <h4>Description: <%= @announce.description %></h4>
           <h4 class="font-weight-bold" style="background-color: #e6f4ef">Price per Day: <%= @announce.price_per_day %> €</h4>
-          <h4>Year: <%= @announce.purchase_year %></h3>
-          <h4>Date start:<%= @announce.date_start %></h4>
-          <h4>Date end: <%= @announce.date_end %></h4>
+          <h4 class="font-weight-bold">Year: <%= @announce.purchase_year %></h4>
+          <p class="font-weight-bold">Address: <%= @announce.address %></p>
 
           <div>
             <%= simple_form_for [@announce, @booking ] do |f| %>
