@@ -5,25 +5,28 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="cards-index" >
-    <% @announces.each do |announce| %>
-     <%= link_to announce_path(announce), class: "card-link" do %>
-       <div class="card-index">
-          <%= cl_image_tag announce.photo, crop: :fit %>
-          <div class="card-info-index">
-            <h2><%= announce.model %> - <%= announce.brand %></h2>
-            <p><%= announce.description %></p>
-            <p>From:<%= announce.date_start%>- To:<%= announce.date_end %></p>
-            <div class="card-info-price">
-             <h2><%= announce.price_per_day %>€</h2>
+<div class="main-container">
+
+  <div class="container">
+    <div class="cards-index" >
+      <% @announces.each do |announce| %>
+       <%= link_to announce_path(announce), class: "card-link" do %>
+         <div class="card-index">
+            <%= cl_image_tag announce.photo, crop: :fit %>
+            <div class="card-info-index">
+              <h2><%= announce.model %> - <%= announce.brand %></h2>
+              <p><%= announce.description %></p>
+              <p>From:<%= announce.date_start%>- To:<%= announce.date_end %></p>
+              <div class="card-info-price">
+               <h2><%= announce.price_per_day %>€</h2>
+              </div>
             </div>
-        </div>
-       </div>
-     <% end %>
-   <% end %>
- </div>
-    <div id="map" style="width: 60%; height: 300px; "data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
->mapbox ici :
+          </div>
+        <% end %>
+      <% end %>
     </div>
+  </div>
+  <div id="map" style="width: 60%; height: 300px; "data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  >mapbox ici :
+  </div>
 </div>
