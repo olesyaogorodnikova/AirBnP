@@ -11,4 +11,6 @@ class Announce < ApplicationRecord
   validates :date_start, presence: true
   validates :date_end, presence: true
   validates :price_per_day, presence: true, inclusion: { in: PRICES }
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

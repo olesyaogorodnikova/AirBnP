@@ -1,6 +1,14 @@
 class AnnouncesController < ApplicationController
   def index
     @announces = Announce.all
+    @announces_geocoded = Announce.geocoded
+
+    @markers = @announces_geocoded.map do |announce|
+      {
+        lat: announce.latitude,
+        lng: announce.longitude
+      }
+    end
   end
 
   def new
