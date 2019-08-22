@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.announce = Announce.find(params[:announce_id])
     if @booking.save
-      redirect_to bookings_path
+      redirect_to dashboard_path
     else
       render :new
     end

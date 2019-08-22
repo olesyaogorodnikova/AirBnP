@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
   resources :bookings, except: [:create]
+  get "dashboard", to:"pages#dashboard"
 end

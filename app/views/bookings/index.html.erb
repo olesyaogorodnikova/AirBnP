@@ -20,6 +20,24 @@
       </div>
   </div> -->
 
+
+<ul class="list-inline tabs-underlined">
+  <li>
+    <a href="mybookingd" class="tab-underlined active">My Bookings</a>
+  </li>
+  <li>
+    <a href="myannounces" class="tab-underlined">My Annonces</a>
+  </li>
+
+</ul>
+
+
+<ul class="list-inline tabs-underlined mt-5 ml-3">
+  <li>
+        <div> <%= link_to "Continue Booking", announces_path, class: "tab active" %></div>
+  </li>
+</ul>
+
 <div class="container" id="container-bookings">
     <h1 class= "mt-5"><strong> All your booked phones <strong></h1>
   </div>
@@ -35,6 +53,7 @@
                 <h2><%= booking.announce.model %></h2>
                 <h2><%= booking.announce.brand %></h2>
                 <p><%= booking.announce.description %></p>
+
               </div>
               <div class="card-bottom-link">
                 <%= link_to "Details", announce_path(booking.announce_id) %>
@@ -42,7 +61,6 @@
                   <i class="fa fa-trash destroy_booking"></i>
                 <% end %>
               </div>
-
 
             </div>
           </div>
