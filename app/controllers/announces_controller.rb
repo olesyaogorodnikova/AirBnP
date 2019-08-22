@@ -22,10 +22,6 @@ class AnnouncesController < ApplicationController
     end
   end
 
-  def show
-    @announce = Announce.find(params[:id].to_i)
-  end
-
   def update
     @announce = Announce.find(params[:id])
     @announce.update(params[:announce])
