@@ -51,28 +51,28 @@
 </div>
 
   <div class="tab-pane fade" id="rentings" role="tabpanel" aria-labelledby="rentings-tab">
-
     <h2 class = "my-5 text-center">My Offers</h2>
     <div class="container center offset-3" style="width: 900px">
       <div class="mr-6">
       <% if @myrentings != [] %>
-    <% @myrentings.each do |booking| %>
-      <div class="card-product my-3">
-        <%= cl_image_tag booking.announce.photo %>
-        <div class="card-product-infos">
-          <h2><%= booking.announce.model %></h2>
-          <h2><%= booking.announce.brand %></h2>
-          <p><%= booking.announce.description %></p>
-          <br>
-          <% if booking.status == nil  %>
-          <%= link_to "Accept", booking_accept_path(booking), class: "btn btn-success" %>
-          <%= link_to "Decline", booking_decline_path(booking), class: "btn btn-danger" %>
-          <% else  %>
-          <%= booking.status %>
-          <% end %>
-        <% end%>
+      <% @myrentings.each do |booking| %>
+        <div class="card-product my-3">
+          <%= cl_image_tag booking.announce.photo %>
+            <div class="card-product-infos">
+              <h2><%= booking.announce.model %></h2>
+              <h2><%= booking.announce.brand %></h2>
+              <p><%= booking.announce.description %></p>
+            <br>
+            <% if booking.status == nil  %>
+              <%= link_to "Accept", booking_accept_path(booking), class: "btn btn-success" %>
+              <%= link_to "Decline", booking_decline_path(booking), class: "btn btn-danger" %>
+            <% else  %>
+              <%= booking.status %>
+            <% end %>
+          </div>
         </div>
-
+      <% end%>
+      </div>
       </div>
     <% end %>
   </div>
