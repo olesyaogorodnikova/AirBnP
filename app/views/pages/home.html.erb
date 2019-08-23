@@ -1,10 +1,13 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path'smart_banner_z6hhdo.jpg' %>');">
   <div class="banner-content">
-    <h1 class="offset-0 mb-5" style="margin-top: -10rem">AirBnP for Smartphones</h1>
-    <p><span id="banner-typed-text" style="font-weight:bold; margin-left: -30rem; font-size:38px; color:  #cdcdcc"></span></p>
-    <h2 style="margin-left: -35rem; margin-top: 4rem">Long-term or Short-term Rental!</h2>
-     <h2 style="margin-left: -35rem; margin-top: 2rem">Earn money renting your SmartPhone!</h2>
-     <h2 style="margin-left: -35rem; margin-top: 2rem">Find your dream Smartphone!</h2>
+
+    <!-- <p><span id="banner-typed-text" style="font-weight:bold; margin-left: -30rem; font-size:38px; color:  #cdcdcc"></span></p>-->
+
+    <h1 style="margin-left: -20rem; margin-bottom: 4rem; margin-top: 0rem">AirBnP for Phones!</h1>
+
+    <h3 style="margin-left: -20rem">Long-term or Short-term Rental!</h3>
+     <h3 style="margin-left: -20rem; margin-top: 2rem">Earn Money renting your Phone!</h3>
+     <h3 style="margin-left: -20rem; margin-top: 2rem">Find your dream Phone!</h3>
      <p><span id="banner-typed-text" class="offset-3 mb-5" ></span></p>
   </div>
 </div>
@@ -12,7 +15,7 @@
 
 
 <div class="container" style="height: 300px">
-    <h1 class = "mb-5 text-center" style="color: #061E32">We offer rentals of smartphones for Corporate or Private use! </h1>
+    <h1 class = "mb-5 text-center" style="color: #061E32">We offer rentals and bookings of Pones! </h1>
     <div class="d-flex justify-content-around">
    <div> <%= link_to "I want to add my Phone", new_announce_path, class: "btn btn-outline-success btn-lg p-3 font-weight-bold" %></div>
     <div> <%= link_to "I want a Phone", announces_path, class: "btn btn-primary btn-lg btn-flat p-3 font-weight-bold" %></div>
@@ -21,18 +24,58 @@
 
 </div>
 
-  <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'sony_x_rcxtf6.jpg' %>')"><%= link_to "Sony", announces_path %></div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'samsung_galaxy_l8kvfd.jpg' %>')"><%= link_to "Samsung", announces_path %></div>
+<div class="cards">
+ <%= link_to announces_path do %>
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'samsung_galaxy_l8kvfd.jpg' %>')"> Samsung </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'aqkau85cea4qk3a1iswf.jpg' %>')">Google</div>
+      </div>
+      <div class="carousel-item">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'iphone_vlpyki.webp' %>')"> Iphone </div>
+      </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'huawei_ij4nhu.jpg' %>')"><%= link_to "Huawei", announces_path %></div>
+     </div>
+    </div>
+    <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'iphonex_lcmkpg.jpg' %>')"><%= link_to "IPhone", announces_path %></div>
+    <%= link_to announces_path do %>
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'sony_x_rcxtf6.jpg' %>')"> Sony </div>
+      </div>
+      <div class="carousel-item ">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'samsung_galaxy_l8kvfd.jpg' %>')">Samsung</div>
+      </div>
+      <div class="carousel-item">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'mototorolla_mnkowr.jpg' %>')"> Motorolla </div>
+      </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'nokia_ysaqyu.jpg'%>')"><%= link_to "Nokia", announces_path %></div>
+     </div>
+    </div>
+    <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'smart_banner_z6hhdo.jpg' %>')"><%= link_to "Other", announces_path %></div>
+    <%= link_to announces_path do %>
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'mototorolla_mnkowr.jpg' %>')">Motorolla</div>
+      </div>
+      <div class="carousel-item ">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'sony_x_rcxtf6.jpg' %>')"> Sony </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path'samsung_galaxy_l8kvfd.jpg' %>')">Samsung</div>
+      </div>
+     </div>
+    </div>
+    <% end %>
   </div>
 </div>
+
 
