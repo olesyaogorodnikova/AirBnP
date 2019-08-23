@@ -6,57 +6,104 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+puts "Starting seed"
 Announce.destroy_all
 
-users = [
-  {
-    first_name: "Mike",
-    last_name: "Smith",
-    localisation: "France",
-    email: "smith@gmail.com",
+User.destroy_all
+
+User.create!(
+    first_name: "Edward",
+    last_name: "Norton",
+    email: "ed.norton@gmail.com",
     password: "123456"
-    },
-  {
+    )
+
+User.create!(
     first_name: "Luke",
-    last_name: "Kohl",
-    localisation: "Germany",
-    email: "kohl@gmail.com",
+    last_name: "Skywalker",
+    email: "skywalker@gmail.com",
     password: "123456"
-    }]
+    )
 
-users.each { |user| User.create(user) }
+User.create!(
+    first_name: "Dark",
+    last_name: "Vador",
+    email: "toto@gmail.com",
+    password: "123456"
+    )
 
-announces = [
-  {
-    model: "X10",
-    brand: "IPhone",
-    state: "very good",
-    photo: "https://images.samsung.com/is/image/samsung/ph-galaxy-a9-a920-sm-a920fzbdxtc-frontvitalityblue-123095342?$PD_GALLERY_L_JPG$",
-    description: "The smartphone in a very good state",
-    price_per_day: "10€",
-    purchase_year: "2018",
-    date_start: "18/08/2019",
-    date_end: "19/08/2019",
-    user_id: User.first.id
-    },
-  {
-    model: "s12",
-    brand: "Sumsung",
-    state: "very good",
-    photo: "https://images.samsung.com/is/image/samsung/ph-galaxy-a9-a920-sm-a920fzbdxtc-frontvitalityblue-123095342?$PD_GALLERY_L_JPG$",
-    description: "The smartphone in a very good state",
-    price_per_day: "15€",
-    purchase_year: "2018",
-    date_start: "19/08/2019",
-    date_end: "20/08/2019",
-    user_id: User.last.id
-    }]
+User.create!(
+    first_name: "Dark",
+    last_name: "Vador",
+    email: "owner@gmail.com",
+    password: "123456"
+    )
 
-announces.each do |announce|
-  ann = Announce.new(announce)
-  ann.remote_photo_url = announce[:photo]
-  ann.save!
+User.create!(
+    first_name: "Dark",
+    last_name: "Vador",
+    email: "loueur@gmail.com",
+    password: "123456"
+)
 
-end
 
+puts 'a'
+
+a = Announce.new(
+    model: "6S",
+    brand: "Apple",
+    state: "Excellent",
+    description: "Téléphone en bon état, quelques petites traces sur l'écran",
+    price_per_day: 5,
+    purchase_year: 2017,
+    user_id: User.all[3].id,
+    address: "12 rue Oberkampf 75011 Paris"
+    )
+a.remote_photo_url = "http://icdn2.digitaltrends.com/image/apple-iphone-6s_7840-1500x1000-1500x1000.jpg"
+a.save
+puts 'b'
+
+a = Announce.new(
+    model: "S4",
+    brand: "Samsung",
+    state: "Bon état",
+    description: "Il fonctionne, la batterie tient encore la charge sur une journée. Fourni avec une coque.",
+    price_per_day: 2,
+    purchase_year: 2011,
+    address: "34 rue de Vaugirard 75015 Paris",
+    user_id: User.all[1].id
+        )
+a.remote_photo_url = "https://cdn.theunlockr.com/wp-content/uploads/2014/04/Flash-Recovery-Samsung-Galaxy-S4-Canadian.jpg"
+a.save
+
+
+ a = Announce.new(
+    model: "Lumia 640",
+    brand: "Nokia",
+    state: "Comme neuf",
+    description: "Impeccable, le téléphone a été utilisé deux mois seulement. Toujours protégé par un filtre.",
+    price_per_day: 7,
+    purchase_year: 2017,
+    address: "34 rue de Vaugirard 75015 Paris",
+    user_id: User.all[2].id
+    )
+
+a.remote_photo_url = "https://pocketnow.com/wp-content/uploads/2015/06/Lumia640_WP_20150601_09_55_08.jpg"
+a.save
+
+
+a = Announce.new(
+    model: "8310",
+    brand: "Nokia",
+    state: "Fonctionnel",
+    description: "Indestructible!",
+    price_per_day: 1,
+    purchase_year: 2002,
+    address: "23 rue de la Pompe 75016 Paris",
+    user_id: User.all[3].id
+    )
+
+a.remote_photo_url = "https://i.ytimg.com/vi/vvAtwsUh0FM/maxresdefault.jpg"
+a.save
+
+puts "Seed finished"
