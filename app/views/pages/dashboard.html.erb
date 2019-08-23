@@ -16,7 +16,7 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="bookings" role="tabpanel" aria-labelledby="bookings-tab">
-  <h2 class = "my-5 text-center">My Bookings</h2>
+    <h2 class = "my-5 text-center">My Bookings</h2>
     <div class="container center offset-3" style="width: 900px">
       <div class="mr-6">
         <% @mybookings.each do |booking| %>
@@ -30,11 +30,11 @@
             </div>
             <div class ="ml-3">
               <p><%= booking.announce.state %></p>
-                <% if booking.status != nil  %>
-                  <h2><%= booking.status %></h2>
-                <% else %>
-                  <h2> En attente </h2>
-                <% end %>
+              <% if booking.status != nil  %>
+                <h2><%= booking.status %></h2>
+              <% else %>
+                <h2> En attente </h2>
+              <% end %>
             </div>
             <h2 class="card-trip-pricing ml-5"><%= booking.announce.price_per_day %>€/day</h2>
             <div class="card-bottom-link ml-5">
@@ -61,20 +61,19 @@
                 <h2><%= booking.announce.brand %></h2>
                 <p><%= booking.announce.description %></p>
                 <br>
-                  <% if booking.status == nil  %>
-                    <%= link_to "Accept", booking_accept_path(booking), class: "btn btn-success" %>
-                    <%= link_to "Decline", booking_decline_path(booking), class: "btn btn-danger" %>
-                  <% else  %>
-                    <%= booking.status %>
-                  <% end %>
+                <% if booking.status == nil  %>
+                  <%= link_to "Accept", booking_accept_path(booking), class: "btn btn-success" %>
+                  <%= link_to "Decline", booking_decline_path(booking), class: "btn btn-danger" %>
+                <% else  %>
+                  <%= booking.status %>
+                <% end %>
               </div>
             </div>
-          <% end%>
+          <% end %>
         <% end %>
       </div>
     </div>
   </div>
-
   <div class="tab-pane fade" id="announces" role="tabpanel" aria-labelledby="announces-tab">
     <h2 class = "my-5 text-center">My Announces</h2>
     <div class="container center offset-3" style="width: 900px">
@@ -94,10 +93,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
