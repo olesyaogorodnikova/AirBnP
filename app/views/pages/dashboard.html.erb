@@ -22,18 +22,19 @@
         <% @mybookings.each do |booking| %>
           <div class="card-product mb-3">
             <%= cl_image_tag booking.announce.photo %>
-            <div class="card-product-infos ml-3">
-              <h2 class ="ml-3 mt-4"><%= booking.announce.brand %></h2>
-              <p class ="ml-3"> <%= booking.announce.model %></p>
-              <p class ="ml-3"> <%= booking.date_start %></p>
+            <div class="card-product-infos ml-5">
+              <h2 class ="ml-2"><%= booking.announce.brand %></h2>
+              <h2 class ="ml-2"> <%= booking.announce.model %></h2>
+              <h2 class ="ml-2"> <%= booking.date_start %></h2>
+              <h2 class ="ml-2"><%= booking.announce.state %></h2>
               <br>
             </div>
             <div class ="ml-3">
-              <p><%= booking.announce.state %></p>
+
               <% if booking.status != nil  %>
-                <h2><%= booking.status %></h2>
+                <h2 style="color: red"><%= booking.status %></h2>
               <% else %>
-                <h2> En attente </h2>
+                <h2 style="color: orange"> En attente </h2>
               <% end %>
             </div>
             <h2 class="card-trip-pricing ml-5"><%= booking.announce.price_per_day %>€/day</h2>
@@ -59,7 +60,7 @@
               <div class="card-product-infos">
                 <h2><%= booking.announce.model %></h2>
                 <h2><%= booking.announce.brand %></h2>
-                <p><%= booking.announce.description %></p>
+                <h3><%= booking.announce.description %></h3>
                 <br>
                 <% if booking.status == nil  %>
                   <%= link_to "Accept", booking_accept_path(booking), class: "btn btn-success" %>
