@@ -21,4 +21,9 @@ class PagesController < ApplicationController
     # @myannounces
 
   end
+    def destroy
+    @mybooking = Booking.find(params[:id])
+    @mybooking.destroy
+    redirect_to dashboard_path
+  end
 end
