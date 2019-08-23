@@ -189,10 +189,12 @@ grid-gap: 16px;
 .card-link {
 text-decoration: none;
 color: black;
+margin-left: 1.25rem;;
 }
 
 .card-link:hover {
 color: #167ffb;
+margin-left: none;
 }
 
 .main-container {

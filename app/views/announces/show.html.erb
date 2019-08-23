@@ -1,9 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path'https://res.cloudinary.com/dhf3phkaa/image/upload/v1566234788/Phones_ag3fq0.jpg' %>'); height:800px">
   <div class="banner-content">
-    <h1 class="offset-0 mb-5 mt-5">Your Choice :</h1>
+    <h1 class="offset-0 mb-5 mt-5">Your Choice is:</h1>
 
     <div class="card-phones shadow-lg p-3">
-      <h2 class="text-underline mb-5 pt-3"> <%= @announce.model %> </h2>
+      <h2 class="text-underline mb-5 pt-3 font-weight-bold"> <%= @announce.model %> </h2>
       <div class="d-flex justify-content-around pb-3">
         <div class= "mr-5">
           <% if @announce.photo? %>
@@ -11,16 +11,20 @@
           <% end %>
         </div>
         <div style= text-align:left;>
-          <h4 class="font-weight-normal">Brand: <%= @announce.brand %></h4>
-          <h4 class="font-weight-normal">State: <%= @announce.state %></h4>
-          <h4>Description: <%= @announce.description %></h4>
-          <h4 class="font-weight-bold" style="background-color: #e6f4ef">Price per Day: <%= @announce.price_per_day %> €</h4>
-          <h4 class="font-weight-bold">Year: <%= @announce.purchase_year %></h4>
-          <p class="font-weight-bold">Address: <%= @announce.address %></p>
-
+          <h4 class="font-weight-normal"><span class="font-weight-bold">Brand:</span> <%= @announce.brand %></h4>
+          <h4 class="font-weight-normal"><span class="font-weight-bold">State: </span><%= @announce.state %></h4>
+          <h4><span class="font-weight-bold">Description: </span><%= @announce.description %></h4>
+          <h4 class="font-weight-bold">Price per Day: <%= @announce.price_per_day %> €</h4>
+          <h4><span class="font-weight-bold">Issue year:</span> <%= @announce.purchase_year %></h4>
+          <h4><span class="font-weight-bold">Available from:</span> <%= @booking.date_start %></h4>
+          <h4><span class="font-weight-bold pb-5">
+          <h4><span class="font-weight-bold pb-5">
+          Address:</span> <%= @announce.address %></h4>
+<br>
+<br>
           <div>
             <%= simple_form_for [@announce, @booking] do |f| %>
-              <% f.submit "Book it now !", data: { confirm: "Are you sure to book this ?" }, class: "btn btn-success btn-font  font-weight-bold" %>
+              <% f.submit "Book now !", data: { confirm: "Are you sure to book this ?" }, class: "btn btn-success btn-font  font-weight-bold" %>
             <% end %>
           </div>
           <div>
