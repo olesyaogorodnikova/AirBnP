@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :announces do
     resources :bookings, only: [:create]
   end
-  resources :bookings, except: [:create]
+  resources :bookings, except: [:create] do
+  get "accept", to: "bookings#accept"
+  get "decline", to: "bookings#decline"
+  end
   get "dashboard", to:"pages#dashboard"
 end
