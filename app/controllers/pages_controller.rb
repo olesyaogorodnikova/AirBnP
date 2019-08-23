@@ -12,6 +12,8 @@ class PagesController < ApplicationController
 
     if current_user.announces.exists?
       @myrentings = current_user.announces.map{ |annonce| annonce.bookings}.flatten
+    else
+      @myrentings = []
     end
 
     # @myrentings (les bookings en tant que proprio = array)

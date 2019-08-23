@@ -55,7 +55,7 @@
     <h2 class = "my-5 text-center">My Offers</h2>
     <div class="container center offset-3" style="width: 900px">
       <div class="mr-6">
-
+      <% if @myrentings != [] %>
     <% @myrentings.each do |booking| %>
       <div class="card-product my-3">
         <%= cl_image_tag booking.announce.photo %>
@@ -70,6 +70,7 @@
           <% else  %>
           <%= booking.status %>
           <% end %>
+        <% end%>
         </div>
 
       </div>

@@ -19,11 +19,13 @@
           <p class="font-weight-bold">Address: <%= @announce.address %></p>
 
           <div>
-            <%= simple_form_for [@announce, @booking ] do |f| %>
+            <%= simple_form_for [@announce, @booking] do |f| %>
               <% f.submit "Book it now !", data: { confirm: "Are you sure to book this ?" }, class: "btn btn-success btn-font  font-weight-bold" %>
             <% end %>
-          <div><%= link_to "Back to list", announces_path, class: "btn btn-link"%></div>
           </div>
+          <div>
+            <%= link_to "Back to list", announces_path, class: "btn btn-link"%>
+            </div>
         </div>
       </div>
     </div>
